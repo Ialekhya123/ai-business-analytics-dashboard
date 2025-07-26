@@ -79,7 +79,7 @@ A comprehensive, real-time business intelligence platform built with Python, Das
 - Python 3.8 or higher
 - pip package manager
 
-### Setup Instructions
+### Quick Setup
 
 1. **Clone the repository**
    ```bash
@@ -100,6 +100,43 @@ A comprehensive, real-time business intelligence platform built with Python, Das
 4. **Access the dashboard**
    - Open your browser
    - Navigate to `http://127.0.0.1:8050/`
+
+### 🐳 Docker Installation (Recommended)
+
+If you encounter build issues, use Docker:
+
+```bash
+# Using Docker Compose (easiest)
+docker-compose up -d
+
+# Or using Docker directly
+docker build -t dashboard .
+docker run -p 8050:8050 dashboard
+```
+
+### 🔧 Troubleshooting
+
+**Pandas Build Error?** Try these solutions:
+
+1. **Use minimal requirements:**
+   ```bash
+   pip install -r requirements-minimal.txt
+   ```
+
+2. **Install pre-compiled binaries:**
+   ```bash
+   pip install --only-binary=all pandas numpy
+   ```
+
+3. **Use Conda (Windows users):**
+   ```bash
+   conda create -n dashboard python=3.9
+   conda activate dashboard
+   conda install pandas numpy scikit-learn
+   pip install dash plotly flask
+   ```
+
+📖 **For detailed troubleshooting, see [INSTALLATION.md](INSTALLATION.md)**
 
 ## 📁 Project Structure
 
